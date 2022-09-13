@@ -7,6 +7,7 @@
 <script setup>
 
 import "@ui5/webcomponents/dist/Label";
+import {defineProps} from "vue";
 
 const props = defineProps({
     for: String,
