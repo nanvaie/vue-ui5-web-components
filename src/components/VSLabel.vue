@@ -1,10 +1,5 @@
 <template>
-    <ui5-label
-        :for="props.for"
-        :required="props.required === true ? true : null"
-        :show-colon="props.showColon === true ? true : null"
-        :wrapping-type="props.wrappingType === true ? true : null"
-    >
+    <ui5-label v-bind="props">
         <slot></slot>
     </ui5-label>
 </template>
@@ -15,9 +10,18 @@ import "@ui5/webcomponents/dist/Label";
 
 const props = defineProps({
     for: String,
-    required: Boolean,
-    showColon: Boolean,
-    wrappingType: Boolean
-})
+    required: {
+        type: Boolean,
+        default: undefined
+    },
+    showColon: {
+        type: Boolean,
+        default: undefined
+    },
+    wrappingType: {
+        type: Boolean,
+        default: undefined
+    }
+});
 
 </script>
