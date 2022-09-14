@@ -15,7 +15,6 @@ import {defineProps} from "vue";
 const props = defineProps({
     colorScheme: {
         type: String,
-        default: "1",
         validator(value) {
             return value >= "1" && value <= "10";
         }
