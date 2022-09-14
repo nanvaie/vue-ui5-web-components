@@ -1,5 +1,10 @@
 <template>
-    <ui5-label v-bind="props">
+    <ui5-label
+        :for="props.for"
+        :required="props.required"
+        :showColon="props.showColon"
+        :wrappingType="props.wrappingType"
+    >
         <slot></slot>
     </ui5-label>
 </template>

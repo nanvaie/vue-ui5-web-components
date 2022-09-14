@@ -1,5 +1,13 @@
 <template>
-    <ui5-avatar v-bind="props">
+    <ui5-avatar
+        :accessible-name="props.accessibleName"
+        :color-scheme="props.colorScheme"
+        :icon="props.icon"
+        :initials="props.initials"
+        :interactive="props.interactive"
+        :shape="props.shape"
+        :size="props.size"
+    >
         <slot></slot>
         <slot name="badge"></slot>
     </ui5-avatar>
