@@ -1,9 +1,7 @@
 <template>
     <ui5-badge :color-scheme="props.colorScheme">
         <slot></slot>
-        <div slot="icon">
-            <slot name="icon"></slot>
-        </div>
+        <slot slot="icon" name="icon"></slot>
     </ui5-badge>
 </template>
 
