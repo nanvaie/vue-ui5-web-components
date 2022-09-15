@@ -2,8 +2,8 @@
     <ui5-label
         :for="props.for"
         :required="props.required"
-        :showColon="props.showColon"
-        :wrappingType="props.wrappingType"
+        :show-colon="props.showColon"
+        :wrapping-type="props.wrappingType"
     >
         <slot></slot>
     </ui5-label>
