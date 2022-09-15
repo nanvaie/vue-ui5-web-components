@@ -8,7 +8,7 @@
 <script setup>
 
 import "@ui5/webcomponents/dist/Badge";
-import {defineProps} from "vue";
+import { defineProps } from "vue";
 
 const props = defineProps({
     colorScheme: {
