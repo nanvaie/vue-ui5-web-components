@@ -1,12 +1,12 @@
 <template>
     <ui5-bar :design="props.design">
-        <div slot="startContent">
+        <div v-if="$slots.startContent" slot="startContent">
             <slot name="startContent"></slot>
         </div>
 
         <slot></slot>
 
-        <div slot="endContent">
+        <div v-if="$slots.endContent" slot="endContent">
             <slot name="endContent"></slot>
         </div>
     </ui5-bar>
