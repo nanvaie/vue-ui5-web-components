@@ -7,42 +7,23 @@
         <slot></slot>
 
         <ui5-side-navigation-item
-            v-for="_defaultItem of props.defaultItems"
-            :expanded="_defaultItem.expanded"
-            :icon="_defaultItem.icon"
-            :selected="_defaultItem.selected"
-            :text="_defaultItem.text"
-            :whole-item-toggleable="_defaultItem.wholeItemToggleable"
+            v-for="_item of props.items"
+            :expanded="_item.expanded"
+            :icon="_item.icon"
+            :selected="_item.selected"
+            :slot="_item.fixed ? 'fixedItems' : undefined"
+            :text="_item.text"
+            :whole-item-toggleable="_item.wholeItemToggleable"
         >
-            <template v-if="_defaultItem.subItems !== undefined">
+            <template v-if="_item.subItems !== undefined">
                 <ui5-side-navigation-sub-item
-                    v-for="_defaultSubItem of _defaultItem.subItems"
-                    :icon="_defaultSubItem.icon"
-                    :selected="_defaultSubItem.selected"
-                    :text="_defaultSubItem.text"
+                    v-for="_subItem of _item.subItems"
+                    :icon="_subItem.icon"
+                    :selected="_subItem.selected"
+                    :text="_subItem.text"
                 ></ui5-side-navigation-sub-item>
             </template>
         </ui5-side-navigation-item>
-
-        <ui5-side-navigation-item
-            v-for="_fixedItems of props.fixedItems"
-            :expanded="_fixedItems.expanded"
-            :icon="_fixedItems.icon"
-            :selected="_fixedItems.selected"
-            slot="fixedItems"
-            :text="_fixedItems.text"
-            :whole-item-toggleable="_fixedItems.wholeItemToggleable"
-        >
-            <template v-if="_fixedItems.subItems !== undefined">
-                <ui5-side-navigation-sub-item
-                    v-for="_fixedSubItem of _fixedItems.subItems"
-                    :icon="_fixedSubItem.icon"
-                    :selected="_fixedSubItem.selected"
-                    :text="_fixedSubItem.text"
-                ></ui5-side-navigation-sub-item>
-            </template>
-        </ui5-side-navigation-item>
-
     </ui5-side-navigation>
 </template>
 
@@ -57,8 +38,7 @@ const props = defineProps({
         type: Boolean,
         default: undefined
     },
-    defaultItems: Object,
-    fixedItems: Object,
+    items: Object,
 });
 
 </script>
