@@ -7,6 +7,7 @@
         :disabled="props.disabled"
         :icon="props.icon"
         :icon-end="props.iconEnd"
+        :slot="props.slot"
         :submits="props.submits"
         :tooltip="props.tooltip"
     >
@@ -45,6 +46,7 @@ const props = defineProps({
         type: Boolean,
         default: undefined
     },
+    slot: String,
     submits: {
         type: Boolean,
         default: undefined

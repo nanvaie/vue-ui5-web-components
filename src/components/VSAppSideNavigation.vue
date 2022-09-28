@@ -1,8 +1,7 @@
 <template>
     <ui5-side-navigation
         :collapsed="props.collapsed"
-        :default-items="props.defaultItems"
-        :fixed-items="props.fixedItems"
+        :items="props.items"
     >
         <slot></slot>
 
@@ -11,7 +10,7 @@
             :expanded="_item.expanded"
             :icon="_item.icon"
             :selected="_item.selected"
-            :slot="_item.fixed ? 'fixedItems' : undefined"
+            :slot="_item.fixed === true ? 'fixedItems' : undefined"
             :text="_item.text"
             :whole-item-toggleable="_item.wholeItemToggleable"
         >
@@ -32,6 +31,7 @@
 import "@ui5/webcomponents-fiori/dist/SideNavigation";
 import "@ui5/webcomponents-fiori/dist/SideNavigationItem";
 import "@ui5/webcomponents-fiori/dist/SideNavigationSubItem";
+import { defineProps } from "vue";
 
 const props = defineProps({
     collapsed: {
