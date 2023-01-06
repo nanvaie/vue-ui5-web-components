@@ -6,8 +6,8 @@
 </a>
 <a href="https://www.npmjs.com/package/@nanvaie/vue-ui5-web-components">
     <img
-        src="https://img.shields.io/npm/l/@nanvaie/vue-ui5-web-components"
-        alt="License"
+        alt="GitHub License"
+        src="https://img.shields.io/github/license/nanvaie/vue-ui5-web-components"
     >
 </a>
 
