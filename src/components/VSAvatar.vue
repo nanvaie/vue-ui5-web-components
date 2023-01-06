@@ -8,63 +8,67 @@
         :shape="props.shape"
         :size="props.size"
     >
-        <slot></slot>
-        <slot name="badge"></slot>
+        <slot />
+
+        <slot name="badge" />
     </ui5-avatar>
 </template>
 
 <script setup>
 
-import "@ui5/webcomponents/dist/Avatar.js";
-import { defineProps } from "vue";
+import '@ui5/webcomponents/dist/Avatar.js';
+import { defineProps } from 'vue';
 
 const props = defineProps({
     accessibleName: String,
     colorScheme: {
         type: String,
+        default: 'Accent6',
         validator(value) {
             return [
-                "Accent1",
-                "Accent2",
-                "Accent3",
-                "Accent4",
-                "Accent5",
-                "Accent6",
-                "Accent7",
-                "Accent8",
-                "Accent9",
-                "Accent10",
-                "Placeholder",
+                'Accent1',
+                'Accent2',
+                'Accent3',
+                'Accent4',
+                'Accent5',
+                'Accent6',
+                'Accent7',
+                'Accent8',
+                'Accent9',
+                'Accent10',
+                'Placeholder',
             ].includes(value);
-        }
+        },
     },
     icon: String,
     initials: String,
     interactive: {
         type: Boolean,
-        default: undefined
+        default: undefined,
     },
     shape: {
         type: String,
+        default: 'Circle',
         validator(value) {
             return [
-                "Square",
-                "Circle",
+                'Square',
+                'Circle',
             ].includes(value);
-        }
+        },
     },
     size: {
         type: String,
+        default: 'S',
         validator(value) {
             return [
-                "XS",
-                "S",
-                "M",
-                "L",
-                "XL",
+                'XS',
+                'S',
+                'M',
+                'L',
+                'XL',
             ].includes(value);
-        }
-    }
+        },
+    },
 });
 
 </script>
