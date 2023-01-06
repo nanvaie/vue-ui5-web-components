@@ -2,8 +2,8 @@
     "name": "@nanvaie/vue-ui5-web-components",
     "version": "0.0.2",
     "dependencies": {
-        "@ui5/webcomponents": "1.7.1",
-        "@ui5/webcomponents-base": "1.7.1",
-        "@ui5/webcomponents-fiori": "1.7.1"
+        "@ui5/webcomponents": "1.9.3",
+        "@ui5/webcomponents-base": "1.9.3",
+        "@ui5/webcomponents-fiori": "1.9.3"
     }
 }
