@@ -1,25 +1,27 @@
 <template>
     <ui5-calendar
-        :hide-week-numbers="props.hideWeekNumbers"
-        :selection-mode="props.selectionMode"
         :format-pattern="props.formatPattern"
+        :hide-week-numbers="props.hideWeekNumbers"
         :max-date="props.maxDate"
         :min-date="props.minDate"
         :primary-calendar-type="props.primaryCalendarType"
         :secondary-calendar-type="props.secondaryCalendarType"
+        :selection-mode="props.selectionMode"
     >
-        <slot></slot>
+        <slot />
     </ui5-calendar>
 </template>
 
 <script setup>
 
-import "@ui5/webcomponents/dist/Calendar";
-import "@ui5/webcomponents-localization/dist/features/calendar/Buddhist.js";
-import "@ui5/webcomponents-localization/dist/features/calendar/Islamic.js";
-import "@ui5/webcomponents-localization/dist/features/calendar/Japanese.js";
-import "@ui5/webcomponents-localization/dist/features/calendar/Persian.js";
-import { defineProps } from "vue";
+import '@ui5/webcomponents/dist/Calendar';
+import '@ui5/webcomponents-localization/dist/features/calendar/Buddhist';
+import '@ui5/webcomponents-localization/dist/features/calendar/Islamic';
+import '@ui5/webcomponents-localization/dist/features/calendar/Japanese';
+import '@ui5/webcomponents-localization/dist/features/calendar/Persian';
+import { defineProps } from 'vue';
+import CalendarSelectionMode from '@ui5/webcomponents/dist/types/CalendarSelectionMode';
+import CalendarType from "@ui5/webcomponents-base/dist/types/CalendarType";
 
 const props = defineProps({
     hideWeekNumbers: {
@@ -28,13 +30,14 @@ const props = defineProps({
     },
     selectionMode: {
         type: String,
+        default: CalendarSelectionMode.Single,
         validator(value) {
             return [
-                "Single",
-                "Range",
-                "Multiple"
+                CalendarSelectionMode.Single,
+                CalendarSelectionMode.Range,
+                CalendarSelectionMode.Multiple,
             ].includes(value);
-        }
+        },
     },
     formatPattern: String,
     maxDate: String,
@@ -43,25 +46,25 @@ const props = defineProps({
         type: String,
         validator(value) {
             return [
-                "Gregorian",
-                "Islamic",
-                "Japanese",
-                "Buddhist",
-                "Persian",
+                CalendarType.Gregorian,
+                CalendarType.Islamic,
+                CalendarType.Japanese,
+                CalendarType.Buddhist,
+                CalendarType.Persian,
             ].includes(value);
-        }
+        },
     },
     secondaryCalendarType: {
         type: String,
         validator(value) {
             return [
-                "Gregorian",
-                "Islamic",
-                "Japanese",
-                "Buddhist",
-                "Persian",
+                CalendarType.Gregorian,
+                CalendarType.Islamic,
+                CalendarType.Japanese,
+                CalendarType.Buddhist,
+                CalendarType.Persian,
             ].includes(value);
-        }
+        },
     },
 });
 

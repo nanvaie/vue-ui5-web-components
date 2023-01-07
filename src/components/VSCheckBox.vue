@@ -12,61 +12,65 @@
         :value-state="props.valueState"
         :wrapping-type="props.wrappingType"
     >
-        <slot></slot>
+        <slot />
     </ui5-checkbox>
 </template>
 
 <script setup>
 
-import "@ui5/webcomponents/dist/CheckBox";
-import { defineProps } from "vue";
+import '@ui5/webcomponents/dist/CheckBox';
+import { defineProps } from 'vue';
+import ValueState from '@ui5/webcomponents-base/dist/types/ValueState';
+import WrappingType from '@ui5/webcomponents/dist/types/WrappingType';
 
 const props = defineProps({
     accessibleName: String,
     accessibleNameRef: String,
     checked: {
         type: Boolean,
-        default: undefined
+        default: undefined,
     },
     disabled: {
         type: Boolean,
-        default: undefined
+        default: undefined,
     },
     indeterminate: {
         type: Boolean,
-        default: undefined
+        default: undefined,
     },
     name: String,
     readonly: {
         type: Boolean,
-        default: undefined
+        default: undefined,
     },
     required: {
         type: Boolean,
-        default: undefined
+        default: undefined,
     },
     text: String,
     valueState: {
         type: String,
+        default: ValueState.None,
         validator(value) {
             return [
-                "Warning",
-                "Error",
-                "None",
-                "Success",
-                "Information",
+                ValueState.Warning,
+                ValueState.Error,
+                ValueState.None,
+                ValueState.Success,
+                ValueState.Information,
             ].includes(value);
-        }
+        },
     },
     wrappingType: {
         type: String,
+        default: WrappingType.None,
         validator(value) {
             return [
-                "None",
-                "Normal",
+                WrappingType.None,
+                WrappingType.Normal,
             ].includes(value);
-        }
-    }
+        },
+    },
 });
 
 </script>
