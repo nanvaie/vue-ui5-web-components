@@ -17,8 +17,8 @@
 <script setup>
 
 import "@ui5/webcomponents/dist/Link";
-import LinkDesign from "@ui5/webcomponents/src/types/LinkDesign";
-import WrappingType from "@ui5/webcomponents/src/types/WrappingType";
+import LinkDesign from "@ui5/webcomponents/dist/types/LinkDesign";
+import WrappingType from "@ui5/webcomponents/dist/types/WrappingType";
 
 const props = defineProps({
     accessibilityAttributes: Object,
